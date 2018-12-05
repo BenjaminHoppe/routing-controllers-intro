@@ -25,4 +25,22 @@ class PagesController < ApplicationController
     requested_size = params[:size]
     @kitten_url = "http://placekitten.com/#{requested_size}/#{requested_size}"
   end
+
+  def secrets
+
+       if params[:magic_word] == "escala"
+           render :secrets
+       else
+           flash[:alert] = "Sorry, you're not authorized to see that page!"
+           redirect_to "/welcome"
+       end
+
+
+
+
+
+
+
+
+
 end
