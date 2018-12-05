@@ -12,4 +12,16 @@ class PagesController < ApplicationController
     @header = "Contests!"
   end
 
+  def kitten
+      set_kitten_url
+  end
+
+  def kittens
+    set_kitten_url
+  end
+
+  def set_kitten_url
+    requested_size = params[:size]
+    @kitten_url = "http://placekitten.com/#{requested_size}/#{requested_size}"
+  end
 end
